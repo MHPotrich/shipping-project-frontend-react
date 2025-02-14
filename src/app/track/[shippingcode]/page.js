@@ -1,15 +1,16 @@
 import CustomHeader from "@/components/custom-header";
 import ShippingNotFound from "@/components/shipping-not-found";
+import ShippingTrackDetails from "@/components/shipping-track-details";
 import { getShipping } from "@/services/shipping";
 import { Container, Stack, Typography } from "@mui/material";
 
 export default async function Track({ params }) {
   const shippingCode = (await params).shippingcode;
-  const shipping = await getShipping(shippingCode);
+  const shipping = (await getShipping(shippingCode)).data;
 
   function ShippingTrackingContent() {
     if (shipping) {
-      return <></>;
+      return <ShippingTrackDetails shipping={shipping} />;
     }
 
     return <ShippingNotFound />;

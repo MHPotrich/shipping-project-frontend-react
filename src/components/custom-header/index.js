@@ -38,7 +38,7 @@ function LoginHeaderArea() {
 
 export default function CustomHeader() {
   return (
-    <AppBar id="custom-header">
+    <AppBar id="custom-header" position="static">
       <Container>
         <Toolbar>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>

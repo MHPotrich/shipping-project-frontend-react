@@ -1,8 +1,10 @@
 import axios from "axios";
 
+const shippingBackendPath = process.env.BACKEND_HOST + "/api/v1/shipping/";
+
 export function getShipping(shippingCode){
     return new Promise((resolve, reject) => {
-        axios.get(process.env.BACKEND_HOST + "/shipping/" + shippingCode).then(response => {
+        axios.get(shippingBackendPath + shippingCode).then(response => {
             resolve(response);
         }).catch(error => {
             reject(error);
@@ -25,7 +27,7 @@ export function createShipping(sendById, sendForId, destination){
     };
 
     return new Promise((resolve, reject) => {
-        axios.post(process.env.BACKEND_HOST + "/shipping", newShipping).then(response => {
+        axios.post(shippingBackendPath, newShipping).then(response => {
             resolve(response);
         }).catch(error => {
             reject(error);
@@ -35,7 +37,7 @@ export function createShipping(sendById, sendForId, destination){
 
 export function deleteShipping(shippingCode){
     return new Promise((resolve, reject) => {
-        axios.delete(process.env.BACKEND_HOST + "/shipping/" + shippingCode).then(response => {
+        axios.delete(shippingBackendPath + shippingCode).then(response => {
             resolve(response);
         }).catch(error => {
             reject(error);
@@ -43,9 +45,9 @@ export function deleteShipping(shippingCode){
     });
 }
 
-export function updateShipping(updatedShipping){
+export function updateShipping(shippingCode, updatedShipping){
     return new Promise((resolve, reject) => {
-        axios.put(process.env.BACKEND_HOST + "/shipping", updatedShipping).then(response => {
+        axios.put(shippingBackendPath + shippingCode, updatedShipping).then(response => {
             resolve(response);
         }).catch(error => {
             reject(error);

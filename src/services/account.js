@@ -1,8 +1,10 @@
 import axios from "axios";
 
-export function getShipping(shippingCode){
+const shippingBackendPath = process.env.BACKEND_HOST + "/api/v1/user/";
+
+export function getAccount(accountId){
     return new Promise((resolve, reject) => {
-        axios.get(process.env.BACKEND_HOST + "/shipping/" + shippingCode).then(response => {
+        axios.get(shippingBackendPath + accountId).then(response => {
             resolve(response);
         }).catch(error => {
             reject(error);
@@ -10,22 +12,12 @@ export function getShipping(shippingCode){
     });
 }
 
-export function createShipping(sendById, sendForId, destination){
-    const newShipping = {
-        "destination": {
-            "address1": destination.address1,
-            "address2": destination.address2,
-            "state": destination.state,
-            "city": destination.city,
-            "country": destination.country,
-            "zipCode": destination.zipCode
-        },
-        "sendById": sendById,
-        "sendForId": sendForId
-    };
-
+export function createAccount(newUser){
     return new Promise((resolve, reject) => {
-        axios.post(process.env.BACKEND_HOST + "/shipping", newShipping).then(response => {
+        axios.post(shippingBackendPath, {
+            "FirstName": newUser.FirstName,
+            "lastName": newUser.lastName
+        }).then(response => {
             resolve(response);
         }).catch(error => {
             reject(error);
@@ -33,9 +25,9 @@ export function createShipping(sendById, sendForId, destination){
     });
 }
 
-export function deleteShipping(shippingCode){
+export function deleteAccount(accountId){
     return new Promise((resolve, reject) => {
-        axios.delete(process.env.BACKEND_HOST + "/shipping/" + shippingCode).then(response => {
+        axios.delete(shippingBackendPath + accountId).then(response => {
             resolve(response);
         }).catch(error => {
             reject(error);
@@ -43,9 +35,9 @@ export function deleteShipping(shippingCode){
     });
 }
 
-export function updateShipping(updatedShipping){
+export function updateAccount(accountId, updatedAccount){
     return new Promise((resolve, reject) => {
-        axios.put(process.env.BACKEND_HOST + "/shipping", updatedShipping).then(response => {
+        axios.put(shippingBackendPath + accountId, updatedAccount).then(response => {
             resolve(response);
         }).catch(error => {
             reject(error);

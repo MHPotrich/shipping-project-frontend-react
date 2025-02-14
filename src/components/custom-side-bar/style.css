@@ -1,0 +1,20 @@
+#custom-side-bar {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 360px;
+    padding: 10px;
+    border-right: 1px solid black;
+}
+
+#custom-side-bar > .side-bar-links-container {
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+    flex-direction: column;
+}
+
+#custom-side-bar > .side-bar-links-container > a {
+    margin-bottom: 10px;
+}

@@ -4,6 +4,7 @@ import { AppBar, Toolbar, Box, Button, Container } from "@mui/material";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import "./style.css";
 import { useState } from "react";
+import Link from "next/link";
 
 const pages = [
   {
@@ -31,7 +32,12 @@ function LoginHeaderArea() {
 
   return (
     <Box sx={{ marginLeft: "auto" }}>
-      <Button sx={{ my: 2, color: "white", display: "block" }} onClick={() => {setIsUserLoggedIn(!isUserLoggedIn)}}>Login</Button>
+      <Link href="/new-account">
+        <Button sx={{ my: 2, color: "white", display: "block", textAlign: "center" }}>
+          <span>Login/Sign up</span>
+          <AccountCircleIcon />
+        </Button>
+      </Link>
     </Box>
   );
 }

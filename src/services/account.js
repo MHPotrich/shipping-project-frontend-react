@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const shippingBackendPath = process.env.BACKEND_HOST + "/api/v1/user/";
+const route = "/api/v1/user/";
+const shippingBackendPath = `${process.env.BACKEND_HOST}${route}`;
 
 export function getAccount(accountId){
     return new Promise((resolve, reject) => {

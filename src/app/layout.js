@@ -1,20 +1,20 @@
 import "./globals.css";
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
 
 export const metadata = {
-  title: "Shipping Project",
-  details: ""
-}
+	title: "Shipping Project",
+	details: "",
+};
 
 export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
-      <body>
-        <main>{children}</main>
-      </body>
-    </html>
-  );
+	return (
+		<html lang="en">
+			<body>
+				<main>{children}</main>
+			</body>
+		</html>
+	);
 }

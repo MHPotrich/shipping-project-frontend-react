@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+}
+
 .container, .container-vertial {
     display: flex;
     flex-direction: column;
@@ -9,4 +13,8 @@
 
 .container-vertial {
     flex-direction: row;
+}
+
+section {
+    margin: 10px 0;
 }

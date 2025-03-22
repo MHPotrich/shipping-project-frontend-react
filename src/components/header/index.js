@@ -29,6 +29,7 @@ export default function Header(){
                 </div>
                 <div className="login-area">
                     <Link href="/login"><button type="button">Login</button></Link>
+                    <Link href="/login"><button type="button">Sign up</button></Link>
                 </div>
             </div>
         </header>

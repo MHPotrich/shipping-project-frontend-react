@@ -6,6 +6,7 @@ header {
     background-color: darkgray;
     height: 60px;
     border-bottom: 1px solid black;
+    z-index: 10;
 
     a {
         text-decoration: none;
@@ -40,7 +41,6 @@ header {
     .login-area {
         padding: 10px 0;
         display: flex;
-        width: 80px;
 
         button {
             display: flex;
@@ -50,6 +50,12 @@ header {
             border-radius: 5px;
             align-items: center;
             justify-content: center;
+            min-width: 80px;
+            margin-right: 5px;
+
+            &:last-child {
+                margin-right: 0;
+            }
         }
     }
 }

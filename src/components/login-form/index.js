@@ -33,7 +33,7 @@ export default function LoginForm(){
                 {password_error && <strong className="error-warning">{password_error}</strong>}
             </div>
             <button type="button" className="login-button" onClick={login_handler}>Login</button>
-            <Link href="/new-account" className="create-account-link">Create an account</Link>
+            <span className="create-account-link">Don't have account? <Link href="/new-account">create an account</Link></span>
         </div>
     </section>
 }

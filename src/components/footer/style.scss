@@ -1,7 +1,28 @@
 footer {
     background-color: darkgray;
     display: flex;
-    height: 400px;
     width: 100%;
     margin: 0;
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        .link-area {
+            display: flex;
+            flex-direction: column;
+
+            a {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .bottom-footer-area {
+        margin-bottom: 20px;
+        display: flex;
+        width: 100%;
+    }
 }

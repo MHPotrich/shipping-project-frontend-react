@@ -12,8 +12,16 @@ export default function Header(){
             link: "/"
         },
         {
+            label: "My shippings",
+            link: "/shippings"
+        },
+        {
             label: "Tracking shippings",
             link: "/track"
+        },
+        {
+            label: "Search shipping",
+            link: "/search-shipping"
         },
         {
             label: "Pricing",
@@ -38,6 +46,7 @@ export default function Header(){
                 <div className="login-area">
                     <Link href="/login"><button type="button">Login</button></Link>
                     <Link href="/create-account"><button type="button">Sign up</button></Link>
+                    <Link href="/create-account"><button type="button">Sign up for business</button></Link>
                 </div>
             </div>
         </header>

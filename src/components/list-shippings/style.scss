@@ -1,0 +1,17 @@
+#list-shippings {
+    .title {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .shippings-table {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+
+        .table-title, .table-line {
+            display: grid;
+            grid-template-columns: 25% 25% 25% 25%;
+        }
+    }
+}

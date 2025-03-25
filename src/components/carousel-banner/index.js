@@ -40,11 +40,11 @@ export default function CarouselBanner({ slides }){
             <div className="slider">
                 {
                     slides && <>
-                        <button className="slider-button prev-slider-button" type="button" onClick={() => change_slide_handler(false)}>prev</button>
+                        <button className="slider-button prev-slider-button" type="button" onClick={() => change_slide_handler(false)}></button>
                         <Link href={slides[current_slide_index].link}>
                             <Image className="slider-image" src={slides[current_slide_index].image} alt={slides[current_slide_index].alt} fill sizes="(min-width: 808px) 50vw, 100vw" />
                         </Link>
-                        <button className="slider-button next-slider-button" type="button" onClick={() => change_slide_handler(true)}>next</button>
+                        <button className="slider-button next-slider-button" type="button" onClick={() => change_slide_handler(true)}></button>
                         { slides[current_slide_index].title && <h1 className="slider-title">{slides[current_slide_index].title}</h1> }
                     </>
                 }
